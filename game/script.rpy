@@ -14,6 +14,7 @@ default bag_of_winds = False
 default bag_of_endless_bread = False
 default moly = False
 default drug = False
+default teiresias = False
 
 
 
@@ -210,12 +211,57 @@ label circe:
         jump goodbye_odysseus_turned_pig
 
 label underworld:
+
+    scene bg underworld
+
+    "Circe advises the men to go to the Underworld, before going back to Ithaca"
+
+    menu:
+
+        "When they reached the Underworld, Odysseus encounters"
+
+        "The ghosts of numerous people, including: his mother, Teiresias and Agamemnon":
+
+            $ teiresias = True
+
+            jump 
+
+        "The Hypnotic cat":
+
+            jump hypnotic_cat
     
+
+label hypnotic_cat:
+
+    #TODO add background
+
+    "Odysseus and his crew are hypnotized by the cat"
+
+    "The hypnosis is so strong that leaves the men confused for entire days"
+
+    "Some men die of natural cause, some commit suicide to free themselves from the pain"
+
+    "The few survivors, including Odysseus, are still quite stunned. They get back in the waters but, due to the confusion, end up back in Polyphemus' land "
+
+    # TODO eval whether to offer the possibility of picking where we want to go back to
+    # TODO eval whether variables should be reset or not!
+
+    jump polyphemus
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 return
-
 
 
 label goodbye_endless_bread:
