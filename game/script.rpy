@@ -224,7 +224,7 @@ label underworld:
 
             $ teiresias = True
 
-            jump 
+            jump sirens
 
         "The Hypnotic cat":
 
@@ -249,7 +249,8 @@ label hypnotic_cat:
     jump polyphemus
 
 
-
+label sirens:
+    scene bg sirens
 
 
 
