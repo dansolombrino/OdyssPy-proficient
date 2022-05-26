@@ -1,5 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
+ERROR!
+
 While running game code:
   File "renpy/common/00start.rpy", line 282, in script
     python:
