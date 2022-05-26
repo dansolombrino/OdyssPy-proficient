@@ -4,6 +4,8 @@
 
 ./game/saves/*
 
+*.bak
+
 log.txt
 
 traceback.txt
