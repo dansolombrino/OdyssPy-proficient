@@ -1,8 +1,8 @@
 # Ren'Py files
 
-./game/cache/*
+game/cache/*
 
-./game/saves/*
+game/saves/*
 
 *.bak
 
