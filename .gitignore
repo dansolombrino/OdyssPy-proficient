@@ -1,3 +1,11 @@
+# Ren'Py files
+
+./game/cache/*
+
+*.save
+
+log.txt
+
 # VSC files
 
 /.vscode
