@@ -110,7 +110,7 @@ label ate_lotus_flowers:
 
     crewman_1 "GASP! what was there in those flowers?"
 
-    play sound "cough_2.mp3"
+    play sound "cough_2.mp3" volume 0.3
 
     crewman_2 "My head is spinnin' like crazy!"
 
@@ -124,9 +124,11 @@ label ate_lotus_flowers:
 
     odysseus "What is going on?!?"
 
+    hide odysseus
+
     show crewmen stunned at right with dissolve
 
-    play sound "cough_2.mp3"
+    play sound "cough_2.mp3" volume 0.3
 
     crewmen "We ate the lotus flowers and now we are all sick..."
 
@@ -134,7 +136,7 @@ label ate_lotus_flowers:
     
     show odysseus at right with dissolve
 
-    odysseus "What? Let's go back to our ship, fast!"
+    odysseus "What?!? Really?!? Well, let's go back to our ship then, fast!"
 
     jump polyphemus
 
@@ -149,15 +151,11 @@ label polyphemus:
     
     homer "Here lives Polyphemus"
 
-    odysseus "The travelers assume Polyphemus would understand them and be gentle and welcoming with them"
+    homer "The travelers assume Polyphemus would understand them and be gentle and welcoming with them"
 
-    odysseus "But..."
+    homer "But..."
 
     ## RESUME FROM HERE ##
-
-    
-
-    "But that's not the case, and Polyphemus hates four crewmen"
 
     menu:
 
