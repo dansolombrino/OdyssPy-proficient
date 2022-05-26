@@ -2,7 +2,7 @@
 
 ./game/cache/*
 
-*.save
+./game/saves/*
 
 log.txt
 
