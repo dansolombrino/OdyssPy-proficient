@@ -10,6 +10,8 @@ log.txt
 
 traceback.txt
 
+*.rpyc
+
 # VSC files
 
 /.vscode
