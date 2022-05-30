@@ -11,6 +11,8 @@ define crewman_2 = Character("Crewman 2", color="#B5FD39")
 define crewman_3 = Character("Crewman 3", color="#B5FD39")
 define odysseus = Character("Odysseus", color="#4DA1A9")
 define polyphemus = Character("Polyphemus", color="#FF0000")
+define scylla_and_charybdis = Character("Scylla and Charybdis", color="#FF0000")
+define helios = Character("Helios", color="#A5B5BF")
 
 # This is a variable that is True if you've compared a VN to a book, and False
 # otherwise.
@@ -235,6 +237,8 @@ label aeolus:
     show homer at left with dissolve
 
     homer "In Aeolia, Odysseus and the crewmen meet Aeolus, the God of the Winds."
+
+    #TODO show sack/bag image, similar to lotus
 
     menu:
 
@@ -564,14 +568,24 @@ label sirens_correct:
 label monsters:
 
     scene bg monsters
+
+    show homer at left with dissolve
+
+    homer "Passing the Sirens was no joke, but what's coming next is totally unexpected..."
+
+    hide homer
+
+    show sc at left with dissolve
+
+    scylla_and_charybdis "You are not allowed to pass through any of the paths of this bifurcation, unless a sacrifice is made"
+
+    scylla_and_charybdis "We propose you three options."    
     
     menu:
 
-        "Odysseus had to sacrifice 6 of his men by going past Scylla as opposed to losing the whole ship if they were to go by Charybdis."
+        "What does Odysseus do?"
 
-        "What does he do?"
-
-        "Sacrifices 6 men":
+        "Sacrifices 6 men, to get access to the longest path":
 
             if sacrificed_all_men == False:
 
@@ -581,25 +595,50 @@ label monsters:
 
                 jump already_sacrificed_all_men
 
-        "Sacrifices the entire ship, himself included":
+        "Sacrifices all his crew, to get access to the shortest path":
 
-            jump sacrifies_ship
+            jump goodbye_wrong_choice
+
+        "Refuses both offers and gets killed, together with his men, by Scylla and Charybdis":
+
+            jump goodbye_wrong_choice
+                
 
 label helios:
 
+    hide sc
+
     scene bg helios
 
-    "Destroyed by the loss of his 6 men, the remaining crewmen and Odysseus arrive in Thriancia, home of Helios's cows"
+    show homer at left with dissolve
 
+    homer "Odysseus is comprehensibly destroyed by his loss"
+    
+    homer "He regroups with the survivors and stars, once again, to plan their journey towards Ithaca."
+
+    homer "The men manage to arrive to Thrinakia, land of Helios"
+
+    hide homer
+
+    show helios at right with dissolve
+
+    helios "Hi everyone, and welcome in Thrinakia!"
+
+    helios "I am very happy to host you."
+
+    helios "Here you can find food, rest and comfort"
+
+    helios "Just one thing: never, EVER, touch my cattle!"
+    
     menu:
 
-        "After receiving clear instructions not to eat the cows, what does the crew do?"
+        "What does the crew do?"
 
-        "Eat the cows":
+        "They end up eating Helios' cattle":
 
             jump ogygia
 
-        "do NOT eat the cows":
+        "They respect Helios' orders and they avoid eating the cows":
 
             jump die_starving
 
@@ -664,6 +703,9 @@ label goodbye_die_starving:
     #TODO
 
 label goodbye_die_natural_cause:
+    #TODO
+
+label goodbye_wrong_choice:
     #TODO
 
 
