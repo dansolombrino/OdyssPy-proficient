@@ -283,7 +283,7 @@ label crewmen_open_bag:
     homer "Excited by the prospect of getting back home, the crewmen decide to open the bag gifted to them by Aeolus"
 
     hide homer 
-    
+
     if bag_of_endless_bread == True:
         
         jump goodbye_endless_bread
@@ -296,7 +296,15 @@ label circe:
     
     scene bg circe
 
-    "In Aeaea, Odysseus meets with Hermes"
+    show homer at left with dissolve
+    
+    homer "Little did the men know!"
+
+    homer "The bag of winds released a windstorm, which actually pushes them far away from Ithaca"
+
+    homer "As a result, they get pushed towards Aeaea, lands of Circe goddess"
+    
+    homer "In Aeaea, Odysseus meets with Hermes, who is very gentle with the travelers."
 
     menu:
 
@@ -310,31 +318,73 @@ label circe:
 
             $ moly = False
 
-    "Odysseus sends his men to explore the island, looking for food and a place where to rest"
+    hide homer
 
+    show odysseus at right with dissolve
+
+    odysseus "Crew, go explore the island!"
+    
+    odysseus "Look for food and a place where to rest, so as we can continue our journey back home well rested"
+
+    hide odysseus
+
+    show homer at left with dissolve
+    
     scene bg circe turns men into pigs
     
-    "The crewmen get turned into pigs by Circe"
+    homer "Circe is not welcoming of the men in the lands"
+
+    homer "She uses to turn men into pigs, and so it does with Odysseus and his men"
+
+    hide homer
 
     if moly == True:
 
+        show odysseus at right with dissolve
+
+        odysseus "What is happening?!?"
+
+        odysseus "There must be an explanation, I'll look for Circe..."
+
+        hide odysseus
+
         scene bg circe together odysseus
 
-        "Fortunately, Odysseus got \"moly\" by Hermes, so he's immune to the transformation"
+        show homer at left with dissolve
 
-        "Furthermore, he decises to look for Circe"
+        homer "Odysseus indeed finds Circe"
 
-        "The two meet and end up together"
+        homer "They actually end up together, spending an entire year in a relationship in the island"
+
+        homer "Eventually, Circe understands that Odysseus has to go home, so she advises him to what route to take"
+
+        homer "Specifically, she tells him to visit the Underworld..."
+
+        hide homer
 
         jump underworld
 
     else:
 
-        scene bg odysseus defeated
-    
-        "Odysseus is NOT immune to the transformation, so he's turned into a pig too"
+        show odysseus at right with dissolve
 
-        jump goodbye_odysseus_turned_pig
+        odysseus "What is happening?!?"
+
+        scene bg odysseus defeated
+
+        odysseus "I don't feel very well, my entire body hurts!"
+
+        hide odysseus
+    
+        show homer at left with dissolve
+
+        homer "The transformation to pig affects Odysseus as well"
+
+        homer "The effects of the transformation seem to be much stronger on Odysseus..."
+
+        hide homer
+
+        jump goodbye_odysseus_dies_turned_pig
 
 label underworld:
 
@@ -496,7 +546,7 @@ label goodbye_endless_bread:
     #TODO
 
 
-label goodbye_odysseus_turned_pig:
+label goodbye_odysseus_dies_turned_pig:
     #TODO
 
 
