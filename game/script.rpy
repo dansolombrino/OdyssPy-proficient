@@ -10,6 +10,7 @@ define crewman_1 = Character("Crewman 1", color="#B5FD39")
 define crewman_2 = Character("Crewman 2", color="#B5FD39")
 define crewman_3 = Character("Crewman 3", color="#B5FD39")
 define odysseus = Character("Odysseus", color="#4DA1A9")
+define polyphemus = Character("Polyphemus", color="#FF0000")
 
 # This is a variable that is True if you've compared a VN to a book, and False
 # otherwise.
@@ -19,6 +20,8 @@ default moly = False
 default drug = False
 default teiresias = False
 default sacrificed_all_men = False
+default intoxicated = False
+default guilty_conscience = False
 
 
 
@@ -155,30 +158,66 @@ label polyphemus:
 
     homer "But..."
 
-    ## RESUME FROM HERE ##
+    hide homer
+
+    show polyphemus at left with dissolve
+
+    polyphemus "WHO ARE YOU? WHAT DO YOU WANT?!?"
+    
+    polyphemus "YOU ENTERED MY CAVE WITHOUT MY PERMISSION, NOW I WILL EAT YOU ALIVE!"
+
+    hide polyphemus
+
+    show homer at left with dissolve
+
+    homer "Polyphemus actually proceeds to eat four crewmen alive"
+    
+    homer "Odysseus is saddened and angry about this loss, so he decides to hide, in order to organize his thoughts..."
+
+    hide homer
+
+    show odysseus at right with dissolve
 
     menu:
 
-        "As a result, Odysseus"
+        odysseus "Uhm... what do I do?"
 
-        "Makes Polyphemus drunk and blindes him by plunging a burning stake into his eye while he lay asleep":
+        "Make Polyphemus drunk and blind him, sticking a burning stake into his eye while he's asleep":
 
             jump blinded_polyphemus
 
-        "Asks the intervention of Greek Gods":
+        "Makes Polyphemus drunk and kill him, cutting his head with a giant sharp rock":
 
-            jump goodbye_greek_gods_intervention
+            $ intoxicated = True
+
+            jump blinded_polyphemus
+        
+        "Takes the loss. I'll never be able to counter a giant. I can not win.":
+
+            $ guilty_conscience = True
+
+            jump aeolus
     
 
 label blinded_polyphemus:
 
     scene bg blinded polyphemus
 
-    "Odysseus and his men take advantage of the situation and manage to escape"
+    hide odysseus
+
+    show homer at left with dissolve
+
+    homer "Odysseus and his men take advantage of the situation and manage to escape"
+
+    homer "Still shocked about what happened with Polyphemus, they are undecided about where to go next..."
+
+    hide homer
+
+    show crewmen at right with dissolve
 
     menu:
 
-        "Where do they head to next?"
+        "Where to next, chief?"
 
         "Aeolia, land of Aeolus":
 
