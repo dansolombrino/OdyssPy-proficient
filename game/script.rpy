@@ -241,7 +241,7 @@ label aeolus:
     homer "In Aeolia, Odysseus and the crewmen meet Aeolus, the God of the Winds."
 
     show antique sack at topleft
-    
+
     menu:
 
         "Aeolus is very friendly with them, and gives them a bag with what?"
@@ -721,7 +721,52 @@ label conclusion:
 
 
 label goodbye_endless_bread:
-    #TODO
+    scene bg bread
+
+    show homer at left with dissolve
+
+    homer "The crewmen discover the content of the bag"
+
+    homer "Inside the sack, there is the \"Endless Bread\" and a papyrus explaining what its properties"
+
+    homer "The men are thrilled about the discovery..."
+
+    hide homer
+
+    show crewmen at right with dissolve
+
+    crewman_1 "I want it!"
+
+    crewman_2 "I need it!"
+
+    crewman_1 "NO! I must take it! I've went foodless for days!"
+
+    crewman_3 "SO WHAT? You ain't the only one hungry here!"
+
+    hide crewmen
+
+    scene bg bread preach
+
+    show homer at left with dissolve
+
+    homer "Crewmen end up fighting with each other for the \"Endless Bread\""
+
+    homer "Violence spikes up"
+
+    homer "Amist the confusion, Odysseus is wounded to dead"
+
+    #TODO add crashing sound
+
+    homer "The entire ship is out of control and eventually it crashes against a giant rock."
+
+    homer "Odysseus and crew die, alone, in the middle of the Mediterranea Sea"
+
+    homer "They started young, fought the war and were happy to get back home"
+
+    homer "But avarice and rivalry eventually killed them all."
+
+    jump that_s_not_quite_how_it_went
+
 
 
 label goodbye_odysseus_dies_turned_pig:
@@ -759,5 +804,6 @@ label goodbye_wrong_choice:
 label goodbye_dies_with_calypso:
     #TODO
 
-
+label that_s_not_quite_how_it_went:
+    #TODO
 
