@@ -13,6 +13,8 @@ define odysseus = Character("Odysseus", color="#4DA1A9")
 define polyphemus = Character("Polyphemus", color="#FF0000")
 define scylla_and_charybdis = Character("Scylla and Charybdis", color="#FF0000")
 define helios = Character("Helios", color="#A5B5BF")
+define calypso = Character("Calypso", color="#FF0000")
+
 
 # This is a variable that is True if you've compared a VN to a book, and False
 # otherwise.
@@ -238,8 +240,8 @@ label aeolus:
 
     homer "In Aeolia, Odysseus and the crewmen meet Aeolus, the God of the Winds."
 
-    #TODO show sack/bag image, similar to lotus
-
+    show antique sack at topleft
+    
     menu:
 
         "Aeolus is very friendly with them, and gives them a bag with what?"
@@ -629,6 +631,8 @@ label helios:
     helios "Here you can find food, rest and comfort"
 
     helios "Just one thing: never, EVER, touch my cattle!"
+
+    hide helios
     
     menu:
 
@@ -646,30 +650,74 @@ label ogygia:
 
     scene bg ogygia
 
-    "In Ogygia, Odyssesu gets captured by Calypso"
+    show homer at left with dissolve
+
+    homer "Helios' rage is immense"
+
+    homer "Odysseus organizes an escape from Thrinakria, which brings him in Ogygia"
+
+    homer "Here lives Calypso"
+
+    hide homer
+
+    show calypso at right with dissolve
+
+    calypso "Hi Odysseus, I have a proposition for you."
+
+    calypso "Spend some time with me here and I will make you immortal"
+
+    hide calypso
+
+    show odysseus at right with dissolve
 
     menu:
 
-        "7 long years the segregation will last, until when"
+        "That's a very tempting offer... what should I do?"
 
-        "Nausicaa frees Odysseus":
+        "Accept":
+
+            jump goodbye_dies_with_calypso
+
+        "Refuse":
 
             jump conclusion
-
-        "Odysseus dies of natural cause, exhausted by the journey":
-
-            jump goodbye_die_natural_cause
     
     
 label conclusion:
 
-    "THE END! THX BYEZZZ!"
+    scene bg ogygia
 
+    show odysseus at right with dissolve
 
+    odysseus "I'm sorry, Calypso."
 
+    odysseus "Thank you for your kind offer, but I want to get back to my wife and my people in Ithaca."
 
+    odysseus "I hope you will understand me."
 
-return
+    hide odysseus
+
+    show calypso at right with dissolve
+
+    calypso "NO, I DO NOT!"
+
+    calypso "TELL YOU WHAT, YOU'LL STILL SPEND TIME HERE!"
+
+    calypso "I'M GONNA KEEP YOU AS A PRISONER HERE, FOREVER!"
+
+    hide calypso
+
+    show homer at left with dissolve
+
+    homer "Calypso will keep Odysseus prisoner for 7 years."
+
+    homer "Eventually, Nausicaa will come in help of the hero and free him."
+
+    scene bg the end
+
+    homer "Odysseus will return back to Ithaca, where, after some trials, he will be able to finally reconcile with his spouse."
+
+    return
 
 
 label goodbye_endless_bread:
@@ -706,6 +754,9 @@ label goodbye_die_natural_cause:
     #TODO
 
 label goodbye_wrong_choice:
+    #TODO
+
+label goodbye_dies_with_calypso:
     #TODO
 
 
