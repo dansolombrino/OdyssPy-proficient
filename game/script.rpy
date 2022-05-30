@@ -297,6 +297,8 @@ label circe:
     scene bg circe
 
     show homer at left with dissolve
+
+    # TODO add windstorm sound
     
     homer "Little did the men know!"
 
@@ -390,11 +392,13 @@ label underworld:
 
     scene bg underworld
 
-    "Circe advises the men to go to the Underworld, before going back to Ithaca"
+    show homer at left with dissolve
+
+    homer "Following the Circe's advice, the men arrive in the Underworld"
 
     menu:
 
-        "When they reach the Underworld, Odysseus encounters"
+        "Who does Odysseus meet here?"
 
         "The ghosts of numerous people, including: his mother, Teiresias and Agamemnon":
 
@@ -411,22 +415,70 @@ label hypnotic_cat:
 
     scene bg cat
 
-    "Odysseus and his crew are hypnotized by the cat"
+    homer "Odysseus and his crew observe intrigued the giant cat"
 
-    "The hypnosis is so strong that leaves the men confused for entire days"
+    homer "The animal is calm lookinh, it seems inocuous"
 
-    "Some men die of natural cause, some commit suicide to free themselves from the pain"
+    hide homer
 
-    "The few survivors, including Odysseus, are still quite stunned."
+    show crewmen at right with dissolve
     
-    "They manage to get back in the waters but, due to the confusion, end up back in Polyphemus' land..."
+    crewmen "What is happening? Is this cat even alive?"
 
-    # TODO eval whether to offer the possibility of picking where we want to go back to
-    # TODO eval whether variables should be reset or not!
+    hide crewmen
 
-    # TODO eval whether to continue the story a little more on this wrong path
+    show odysseus at right with dissolve
 
-    jump polyphemus
+    odysseus "That's strange... something is going on with his eyes..."
+
+    odysseus "Can you guys see it too?"
+
+    hide odysseus
+
+    show homer at left with dissolve
+
+    homer "Odysseus was right."
+
+    homer "The cat's eyes have a strange power: they can hypnotize everyone they point to, even if for just a few seconds"
+
+    homer "It'll be a matter of instant and the men will notice the effects of the hypnosis..."
+
+    hide homer 
+
+    show crewmen stunned at right with dissolve
+
+    crewman_1 "MY EYES! MY EYES! I CAN'T ANYTHING!!! "
+
+    crewman_2 "MY EAR! WHAT IS THIS SOUND? IT'S ATROCIOUS!"
+
+    hide crewmen stunned
+
+    show homer at left with dissolve
+    
+    homer "The crew is in heavy pain"
+
+    homer "Some men die of natural cause, some commit suicide to free themselves from the unbearable pain"
+
+    homer "The few survivors, including Odysseus, are still quite stunned."
+
+    homer "Odysseus understands that he has to bring his crew as far as possible"
+
+    hide homer
+
+    show odysseus stunned at right with dissolve
+
+    menu:
+        
+        odysseus "Getlemen, follw me! This way, it will lead us to..."
+
+        "Polyphemus' land":
+
+            jump polyphemus
+
+            
+        "The Underworld":
+            
+            jump underworld
 
 
 label sirens_choice:
