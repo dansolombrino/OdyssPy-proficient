@@ -504,11 +504,11 @@ label sirens_choice:
 
             $ sacrificed_all_men = True
 
-            jump sirens_sacrifice
+            jump monsters
 
         "Getting by the Sirens requires at least a woman to be present in the ship":
 
-            jump goodbye_sirens_woman
+            jump that_s_not_quite_how_it_went
 
 
 label sirens_correct:
@@ -597,11 +597,17 @@ label monsters:
 
         "Sacrifices all his crew, to get access to the shortest path":
 
-            jump goodbye_wrong_choice
+            if sacrificed_all_men == False:
+
+                jump that_s_not_quite_how_it_went
+
+            else:
+
+                jump already_sacrificed_all_men
 
         "Refuses both offers and gets killed, together with his men, by Scylla and Charybdis":
 
-            jump goodbye_wrong_choice
+            jump that_s_not_quite_how_it_went
                 
 
 label helios:
@@ -781,19 +787,26 @@ label goodbye_odysseus_dies_turned_pig:
 
     jump that_s_not_quite_how_it_went
 
-label goodbye_sirens_woman:
-    #TODO
-
-label sacrifies_ship:
-    #TODO
-
-    jump goodbye_sacrifies_ship
-
-label goodbye_sacrifies_ship:
-    #TODO
-
 label already_sacrificed_all_men:
-    #TODO
+
+    scene bg confused
+
+    show homer at left with dissolve
+
+    homer "Something's not right..."
+
+    homer "You said that Odysseus sacrifices all of his men to pass through Charybdis, but you said that he sacrificed all of his men to pass the Sirens..."
+
+    menu:
+        
+        "What do you want to do?"
+
+        "Retry from my last scene":
+
+            jump sirens_choice
+
+        "Go study maths":
+            jump goodbye
 
 label die_starving:
     #TODO
@@ -814,4 +827,6 @@ label goodbye_dies_with_calypso:
 
 label that_s_not_quite_how_it_went:
     #TODO
+
+label goodbye:
 
