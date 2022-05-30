@@ -378,8 +378,6 @@ label circe:
 
         odysseus "What is happening?!?"
 
-        scene bg odysseus defeated
-
         odysseus "I don't feel very well, my entire body hurts!"
 
         hide odysseus
@@ -770,8 +768,18 @@ label goodbye_endless_bread:
 
 
 label goodbye_odysseus_dies_turned_pig:
-    #TODO
+    
+    scene bg pig
 
+    show homer at left with dissolve
+
+    homer "Differently from his crewmen, Odysseus can't seem to live in his pig form"
+
+    homer "He can't speak, eat nor drink..."
+
+    homer "Several days will pass, after which Odysseus will die out of denutrition"
+
+    jump that_s_not_quite_how_it_went
 
 label goodbye_sirens_woman:
     #TODO
