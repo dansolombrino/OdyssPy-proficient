@@ -232,11 +232,13 @@ label aeolus:
 
     scene bg land of aeolus
 
-    "In Aeolia Odysseus and the crewmen meet Aeolus, the God of the Winds."
+    show homer at left with dissolve
+
+    homer "In Aeolia, Odysseus and the crewmen meet Aeolus, the God of the Winds."
 
     menu:
 
-        "He's very friendly and gives them a bag with what?"
+        "Aeolus is very friendly with them, and gives them a bag with what?"
 
         "Storm winds, to help them push back to Ithaca":
             $ bag_of_winds = True
@@ -248,23 +250,40 @@ label aeolus:
             $ bag_of_endless_bread = True
 
             jump crewmen_open_bag
-
-
-    "He gives them a bag of storm winds, to help push them back to Ithaca."
    
 
 label crewmen_open_bag:
 
     scene bg ithaca
 
-    "Sailing proceeds greatly, Ithaca is now in plain sight, ready to welcome the men."
-    
-    "Odysseus decides then to take a nap, in order to be well rested for his return home."
+    hide homer
 
+    show crewmen at right with dissolve
+
+    crewmen "Chief, sailing is proceeding greatly."
+    
+    crewmen "Ithaca is now in plain sight, just right in front of us!"
+
+    crewmen "We should arrive there tomorrow morning, at worse!"
+
+    hide crewmen
+
+    show odysseus at right with dissolve
+    
+    odysseus "That's fantastic news!"
+    
+    odysseus "Since everything seems smooth, I'll take a quick nap, so as I will be well rested for my return home."
+
+    hide odysseus
+    
     scene bg bag of winds
-    
-    "His crew had the idea to open up the bag gifted by Aeolus"
 
+    show homer at left with dissolve
+    
+    homer "Excited by the prospect of getting back home, the crewmen decide to open the bag gifted to them by Aeolus"
+
+    hide homer 
+    
     if bag_of_endless_bread == True:
         
         jump goodbye_endless_bread
