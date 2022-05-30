@@ -484,11 +484,13 @@ label hypnotic_cat:
 label sirens_choice:
     scene bg sirens
 
-    "Next up for the crew, the Sirens!"
+    show homer at left with dissolve
+
+    homer "Next up for the crew, the Sirens!"
 
     menu:
 
-        "What is the peculiarity of the Sirens?"
+        homer "What is the peculiarity of the Sirens?"
 
         "Getting by the Sirens was an impossible task, as their beautiful song drew anyone who heard it in":
 
@@ -509,18 +511,55 @@ label sirens_correct:
     scene bg sirens
 
     if teiresias == True:
-        "In order to get through the Sirens, Odysseus had his men tie him to a pole, and put wax in their ears so they would not hear the Sirens."
         
+        hide homer
+
+        show odysseus at right with dissolve 
+
+        odysseus "Gentlemen, Teiresias told me in the underworld what is the deal with the Sirens."
+
+        odysseus "For these reason, you'll tie me to this pole and cover my ears with wax."
+
+        odysseus "This way, I'll be able to conduct you pass the Sirens and we'll be able to continue our navigation"
+
+        odysseus "All clear?"
+
+        hide odysseus
+
+        show crewmen at right with dissolve 
+
+        crewmen "YES, SIR!"
+
+        hide crewmen
+
         jump monsters
 
     else:
-        "The men were not sufficiently prepared and did not cover their ears"
+        homer "The men were not sufficiently prepared and did not cover their ears"
 
-        "As a result, all of them hear sirens' songs and get distracted by them"
+        homer "As a result, all of them hear sirens' songs and get distracted by them"
 
-        "They're so confused that they end up in a familiar place... Circe's land!"
+        hide homer
 
-        jump circe
+        show crewmen at right with dissolve
+
+        crewmen_1 "Wow, this chant is so beautiful!"
+
+        crewmen_1 "This is the only thing I want to listen to for the rest of my life!"
+
+        hide crewmen
+
+        show odysseus at left with dissolve
+
+        odysseus "\"I want to focus so much, but I just can't seem to!\""
+
+        odysseus "Gentleman! Let's stir away!"
+        
+        odysseus "I have to admit, I'm so distracted, I'm not sure I gave the right directions to my crew..."
+
+        hide odysseus
+
+        jump start
 
 label monsters:
 
