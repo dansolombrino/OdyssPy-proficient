@@ -26,12 +26,15 @@ default teiresias = False
 default sacrificed_all_men = False
 default intoxicated = False
 default guilty_conscience = False
+default last_scene = "start"
 
 
 
 # The game starts here.
 
 label start:
+
+    $ last_scene = "start"
 
     scene bg ithaca
 
@@ -64,6 +67,8 @@ label start:
             jump goodbye
 
 label lotus_flowers:
+
+    $ last_scene = "lotus_flowers"
 
     scene bg djerba
 
@@ -105,9 +110,11 @@ label lotus_flowers:
 
         "Uhm, better safe then sorry, let's find something more familiar...":
 
-            jump die_starving
+            jump that_s_not_quite_how_it_went
 
 label ate_lotus_flowers:
+
+    $ last_scene = "ate_lotus_flowers"
     
     scene bg ate lotus
 
@@ -149,6 +156,8 @@ label ate_lotus_flowers:
 
 
 label polyphemus:
+
+    $ last_scene = "polyphemus"
 
     scene bg cave of polyphemus
 
@@ -205,6 +214,8 @@ label polyphemus:
 
 label blinded_polyphemus:
 
+    $ last_scene = "blinded_polyphemus"
+
     scene bg blinded polyphemus
 
     hide odysseus
@@ -234,6 +245,8 @@ label blinded_polyphemus:
 
 label aeolus:
 
+    $ last_scene = "aeolus"
+
     scene bg land of aeolus
 
     show homer at left with dissolve
@@ -259,6 +272,8 @@ label aeolus:
    
 
 label crewmen_open_bag:
+
+    $ last_scene = "crewmen_open_bag"
 
     scene bg ithaca
 
@@ -299,6 +314,8 @@ label crewmen_open_bag:
         jump circe
 
 label circe:
+
+    $ last_scene = "circe"
     
     scene bg circe
 
@@ -394,6 +411,8 @@ label circe:
 
 label underworld:
 
+    $ last_scene = "underworld"
+
     scene bg underworld
 
     show homer at left with dissolve
@@ -416,6 +435,8 @@ label underworld:
     
 
 label hypnotic_cat:
+
+    $ last_scene = "hypnotic_cat"
 
     scene bg cat
 
@@ -486,6 +507,10 @@ label hypnotic_cat:
 
 
 label sirens_choice:
+
+    $ last_scene = "sirens_choice"
+
+
     scene bg sirens
 
     show homer at left with dissolve
@@ -512,6 +537,9 @@ label sirens_choice:
 
 
 label sirens_correct:
+
+    $ last_scene = "sirens_correct"
+
     scene bg sirens
 
     if teiresias == True:
@@ -567,6 +595,8 @@ label sirens_correct:
 
 label monsters:
 
+    $ last_scene = "monsters"
+
     scene bg monsters
 
     show homer at left with dissolve
@@ -612,6 +642,8 @@ label monsters:
 
 label helios:
 
+    $ last_scene = "helios"
+
     hide sc
 
     scene bg helios
@@ -648,9 +680,11 @@ label helios:
 
         "They respect Helios' orders and they avoid eating the cows":
 
-            jump die_starving
+            jump that_s_not_quite_how_it_went
 
 label ogygia:
+
+    $ last_scene = "ogygia"
 
     scene bg ogygia
 
@@ -689,6 +723,8 @@ label ogygia:
     
 label conclusion:
 
+    $ last_scene = "conclusion"
+
     scene bg ogygia
 
     show odysseus at right with dissolve
@@ -725,6 +761,9 @@ label conclusion:
 
 
 label goodbye_endless_bread:
+
+    $ last_scene = "goodbye_endless_bread"
+
     scene bg bread
 
     show homer at left with dissolve
@@ -774,6 +813,8 @@ label goodbye_endless_bread:
 
 
 label goodbye_odysseus_dies_turned_pig:
+
+    $ last_scene = "goodbye_odysseus_dies_turned_pig"
     
     scene bg pig
 
@@ -788,6 +829,8 @@ label goodbye_odysseus_dies_turned_pig:
     jump that_s_not_quite_how_it_went
 
 label already_sacrificed_all_men:
+
+    $ last_scene = "already_sacrificed_all_men"
 
     scene bg confused
 
@@ -805,28 +848,49 @@ label already_sacrificed_all_men:
 
             jump sirens_choice
 
-        "Go study maths":
+        "Go study maths...":
             jump goodbye
-
-label die_starving:
-    #TODO
-
-    jump goodbye_die_starving
-
-label goodbye_die_starving:
-    #TODO
-
-label goodbye_die_natural_cause:
-    #TODO
-
-label goodbye_wrong_choice:
-    #TODO
 
 label goodbye_dies_with_calypso:
     #TODO
 
 label that_s_not_quite_how_it_went:
-    #TODO
+
+    scene bg that s
+    
+    show homer at left with dissolve
+
+    homer "Uhm... I'm sorry... that's not quite how the story went..."
+
+    menu:
+
+        "What do you want to do?"
+
+        "Retry from my last scene":
+            
+            jump expression last_scene
+
+        "Retry from random scene":
+
+            #TODO
+            jump RANDOM_SCENE_SELECTION_FUNCTION
+
+        "Go study maths...":
+            jump goodbye
 
 label goodbye:
+
+    scene bg goodbye
+
+    menu:
+
+        "Would you like to...?"
+
+        "Exit":
+
+            return 
+        
+        "Play again":
+
+            jump start
 
