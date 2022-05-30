@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 97: expected menuitem
+File "game/script.rpy", line 214: expected menuitem
     show crewmen at right with dissolve
     ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu May 26 17:34:59 2022
+Mon May 30 09:12:52 2022
