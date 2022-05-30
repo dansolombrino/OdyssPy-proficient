@@ -12,6 +12,8 @@ traceback.txt
 
 *.rpyc
 
+errors.txt
+
 # VSC files
 
 /.vscode
