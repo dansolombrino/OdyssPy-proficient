@@ -890,7 +890,13 @@ label goodbye:
 
             return 
         
-        "Play again":
+        "Play again from the start":
+
+            jump start
+        
+        "Play again from a random scene":
+
+            #TODO
 
             jump start
 
