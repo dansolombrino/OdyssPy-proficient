@@ -1,11 +1,4 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-$ import random
-
-define e = Character("Eileen")
+﻿define e = Character("Eileen")
 define homer = Character("Homer", color="#F8347C")
 define crewmen = Character("Odysseus' crewmen", color="#FFA630")
 define crewman_1 = Character("Crewman 1", color="#B5FD39")
@@ -897,6 +890,7 @@ label that_s_not_quite_how_it_went:
             jump expression last_scene
 
         "Retry from random scene":
+            
             $ import random
             $ random_label_to_jump_to = random.choice(scene_names)
             jump expression random_label_to_jump_to
