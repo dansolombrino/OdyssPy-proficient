@@ -3,6 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+$ import random
+
 define e = Character("Eileen")
 define homer = Character("Homer", color="#F8347C")
 define crewmen = Character("Odysseus' crewmen", color="#FFA630")
@@ -27,6 +29,30 @@ default sacrificed_all_men = False
 default intoxicated = False
 default guilty_conscience = False
 default last_scene = "start"
+default scene_names = [
+    "start",
+    "lotus_flowers",
+    "ate_lotus_flowers",
+    "polyphemus",
+    "blinded_polyphemus",
+    "aeolus",
+    "crewmen_open_bag",
+    "circe",
+    "underworld",
+    "hypnotic_cat",
+    "sirens_choice",
+    "sirens_correct",
+    "monsters",
+    "helios",
+    "ogygia",
+    "conclusion",
+    "goodbye_endless_bread",
+    "goodbye_odysseus_dies_turned_pig",
+    "already_sacrificed_all_men",
+    "goodbye_dies_with_calypso",
+    "that_s_not_quite_how_it_went",
+    "goodbye"
+]
 
 
 
@@ -871,9 +897,9 @@ label that_s_not_quite_how_it_went:
             jump expression last_scene
 
         "Retry from random scene":
-
-            #TODO
-            jump RANDOM_SCENE_SELECTION_FUNCTION
+            $ import random
+            $ random_label_to_jump_to = random.choice(scene_names)
+            jump expression random_label_to_jump_to
 
         "Go study maths...":
             jump goodbye
@@ -896,7 +922,6 @@ label goodbye:
         
         "Play again from a random scene":
 
-            #TODO
-
-            jump start
-
+            $ import random
+            $ random_label_to_jump_to = random.choice(scene_names)
+            jump expression random_label_to_jump_to
