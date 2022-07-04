@@ -120,13 +120,13 @@ label lotus_flowers:
         
         crewmen "Hey! Look! We found these! Shall we eat them?"
 
-        "Yes, we are starving!":
-
-            jump ate_lotus_flowers
-
         "Uhm, better safe then sorry, let's find something more familiar...":
 
             jump that_s_not_quite_how_it_went
+
+        "Yes, we are starving!":
+
+            jump ate_lotus_flowers
 
 label ate_lotus_flowers:
 
@@ -211,13 +211,13 @@ label polyphemus:
 
         odysseus "Uhm... what do I do?"
 
-        "Make Polyphemus drunk and blind him, sticking a burning stake into his eye while he's asleep":
-
-            jump blinded_polyphemus
-
         "Makes Polyphemus drunk and kill him, cutting his head with a giant sharp rock":
 
             $ intoxicated = True
+
+            jump blinded_polyphemus
+
+        "Make Polyphemus drunk and blind him, sticking a burning stake into his eye while he's asleep":
 
             jump blinded_polyphemus
         
@@ -275,14 +275,14 @@ label aeolus:
 
         "Aeolus is very friendly with them, and gives them a bag with what?"
 
-        "Storm winds, to help them push back to Ithaca":
-            $ bag_of_winds = True
-
-            jump crewmen_open_bag
-
         "\"Endless bread\", a specially-crafted type of bread which satisfies the need of eating forever":
 
             $ bag_of_endless_bread = True
+
+            jump crewmen_open_bag
+
+        "Storm winds, to help them push back to Ithaca":
+            $ bag_of_winds = True
 
             jump crewmen_open_bag
    
@@ -512,14 +512,13 @@ label hypnotic_cat:
         
         odysseus "Getlemen, follw me! This way, it will lead us to..."
 
-        "Polyphemus' land":
-
-            jump polyphemus
-
-            
         "The Underworld":
             
             jump underworld
+
+        "Polyphemus' land":
+
+            jump polyphemus
 
 
 label sirens_choice:
@@ -537,9 +536,9 @@ label sirens_choice:
 
         homer "What is the peculiarity of the Sirens?"
 
-        "Getting by the Sirens was an impossible task, as their beautiful song drew anyone who heard it in":
+        "Getting by the Sirens requires at least a woman to be present in the ship":
 
-            jump sirens_correct
+            jump that_s_not_quite_how_it_went
 
         "Getting by the Sirens requires sacrificing all Odysseus' crew":
 
@@ -547,9 +546,12 @@ label sirens_choice:
 
             jump monsters
 
-        "Getting by the Sirens requires at least a woman to be present in the ship":
+        "Getting by the Sirens was an impossible task, as their beautiful song drew anyone who heard it in":
 
-            jump that_s_not_quite_how_it_went
+            jump sirens_correct
+
+
+        
 
 
 label sirens_correct:
@@ -690,13 +692,13 @@ label helios:
 
         "What does the crew do?"
 
-        "They end up eating Helios' cattle":
-
-            jump ogygia
-
         "They respect Helios' orders and they avoid eating the cows":
 
             jump that_s_not_quite_how_it_went
+        
+        "They end up eating Helios' cattle":
+
+            jump ogygia
 
 label ogygia:
 
