@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("OdyssePy")
+define config.name = _("OdyssPy-advanced")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -30,6 +30,9 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+An interactive narration of Homer's classic poem "The Odyssey".
+
+Coded by Daniele Solombrino @dansolombrino
 """)
 
 
@@ -37,7 +40,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "OdyssePy"
+define build.name = "OdyssPy-advanced"
 
 
 ## Sounds and music ############################################################
@@ -143,7 +146,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "OdyssePy-1653226326"
+define config.save_directory = "OdyssPy-advanced-1653226326"
 
 
 ## Icon ########################################################################
