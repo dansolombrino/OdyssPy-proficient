@@ -221,7 +221,7 @@ label polyphemus:
 
             jump blinded_polyphemus
         
-        "Takes the loss. I'll never be able to counter a giant. I can not win.":
+        "Take the loss. I'll never be able to counter a giant. I can not win.":
 
             $ guilty_conscience = True
 
