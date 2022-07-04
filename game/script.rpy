@@ -1,4 +1,4 @@
-﻿define e = Character("Eileen")
+﻿# Defining characters
 define homer = Character("Homer", color="#F8347C")
 define crewmen = Character("Odysseus' crewmen", color="#FFA630")
 define crewman_1 = Character("Crewman 1", color="#B5FD39")
@@ -10,9 +10,7 @@ define scylla_and_charybdis = Character("Scylla and Charybdis", color="#FF0000")
 define helios = Character("Helios", color="#A5B5BF")
 define calypso = Character("Calypso", color="#FF0000")
 
-
-# This is a variable that is True if you've compared a VN to a book, and False
-# otherwise.
+# Defining variables for alternative paths
 default bag_of_winds = False
 default bag_of_endless_bread = False
 default moly = False
@@ -21,6 +19,8 @@ default teiresias = False
 default sacrificed_all_men = False
 default intoxicated = False
 default guilty_conscience = False
+
+# Defining variables for scene selection purposes
 default last_scene = "start"
 default scene_names = [
     "start",
@@ -46,9 +46,7 @@ default scene_names = [
     "goodbye"
 ]
 
-
-
-# The game starts here.
+# Actual game
 
 label start:
 
