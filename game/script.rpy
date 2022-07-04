@@ -339,7 +339,7 @@ label circe:
 
     show homer at left with dissolve
 
-    # TODO add windstorm sound
+    play sound "wind.mp3" volume 0.3
     
     homer "Little did the men know!"
 
@@ -816,7 +816,7 @@ label goodbye_endless_bread:
 
     homer "Amist the confusion, Odysseus is wounded to dead"
 
-    #TODO add crashing sound
+    play sound "sinking_ship.mp3" volume 0.3
 
     homer "The entire ship is out of control and eventually it crashes against a giant rock."
 
