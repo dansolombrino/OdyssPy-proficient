@@ -42,7 +42,6 @@ default scene_names = [
     "goodbye_endless_bread",
     "goodbye_odysseus_dies_turned_pig",
     "already_sacrificed_all_men",
-    "goodbye_dies_with_calypso",
     "that_s_not_quite_how_it_went",
     "goodbye"
 ]
@@ -733,7 +732,7 @@ label ogygia:
 
         "Accept":
 
-            jump goodbye_dies_with_calypso
+            jump that_s_not_quite_how_it_went
 
         "Refuse":
 
@@ -870,9 +869,6 @@ label already_sacrificed_all_men:
         "Go study maths...":
             jump goodbye
 
-label goodbye_dies_with_calypso:
-    #TODO
-
 label that_s_not_quite_how_it_went:
 
     scene bg that s
@@ -890,7 +886,7 @@ label that_s_not_quite_how_it_went:
             jump expression last_scene
 
         "Retry from random scene":
-            
+
             $ import random
             $ random_label_to_jump_to = random.choice(scene_names)
             jump expression random_label_to_jump_to
