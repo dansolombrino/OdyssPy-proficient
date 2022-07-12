@@ -1,4 +1,13 @@
-﻿# Defining characters
+﻿'''
+    Defining Odyssey characters.
+
+    To every character a name and a color is given.
+
+    Red-ish colors represent evil characters, whilst blue or green represent
+    good characters.
+
+    Character class is provided by RenPy
+'''
 define homer = Character("Homer", color="#F8347C")
 define crewmen = Character("Odysseus' crewmen", color="#FFA630")
 define crewman_1 = Character("Crewman 1", color="#B5FD39")
@@ -10,17 +19,29 @@ define scylla_and_charybdis = Character("Scylla and Charybdis", color="#FF0000")
 define helios = Character("Helios", color="#A5B5BF")
 define calypso = Character("Calypso", color="#FF0000")
 
-# Defining variables for alternative paths
+'''
+    Defining state variables that will be used to deal with multiple, alternative and
+    artificial paths.
+'''
 default bag_of_winds = False
 default bag_of_endless_bread = False
 default moly = False
-default drug = False
 default teiresias = False
 default sacrificed_all_men = False
-default intoxicated = False
-default guilty_conscience = False
 
-# Defining variables for scene selection purposes
+
+'''
+    Defining variables for scene selection purposes.
+
+    last_scene stores the last played scene.
+    It is used to store the scene to jump back to, if user commits and error
+    and decides to resume the narration from its last scene
+
+    scene_names stores all the possible scenes.
+    It is used to store the scene to jump back to, if user commits and error and decides
+    to resume the narration from its last scene
+'''
+
 default last_scene = "start"
 default scene_names = [
     "start",
@@ -46,11 +67,30 @@ default scene_names = [
     "goodbye"
 ]
 
-# Actual game
+'''
+    Game entry point
+
+    This is the very first scene that is presented to the user
+'''
 
 label start:
 
+    '''
+        Storing the name of the scene, as described in last_scene in previous 
+        lines of documentation
+    '''
+
     $ last_scene = "start"
+
+    '''
+        scene is a RenPy function wichi allows to control different aspects of 
+        the scene
+
+        In this case, we are setting as background ("bg") an image (ithaca).
+        RenPy is pretty smart, in order to specify assets, it is NOT needed to
+        specify their file extension.
+        Image assets must be placed in the \"image\" folder 
+    '''
 
     scene bg ithaca
 
@@ -70,12 +110,27 @@ label start:
 
     hide homer with dissolve
 
+    '''
+        The menu is a built-in function offered by RenPy, which allows the display of a menu with some options
+
+        The first string presents the question, whilst the following strings
+        represent the options.
+        Options must end with a \':\' character.
+    '''
+
     menu:
 
         "Wanna know how it went? :D"
 
         "HECK YEAH!":
+            
+            '''
+                Jump is a yet another RenPy built-in function, which allows to 
+                move from a scene to the other.
 
+                The intuition is very very similar to the "goto" statement, 
+                offered by the most common procedural programming languages
+            '''
             jump lotus_flowers
 
         "I'd rather not, I prefer maths...":
