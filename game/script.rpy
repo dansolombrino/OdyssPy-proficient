@@ -211,7 +211,7 @@ label polyphemus:
 
         odysseus "Uhm... what do I do?"
 
-        "Makes Polyphemus drunk and kill him, cutting his head with a giant sharp rock":
+        "Make Polyphemus drunk and kill him, cutting his head with a giant sharp rock":
 
             $ intoxicated = True
 
@@ -780,7 +780,7 @@ label conclusion:
 
 label goodbye_endless_bread:
 
-    $ last_scene = "goodbye_endless_bread"
+    $ last_scene = "aeolus"
 
     scene bg bread
 
