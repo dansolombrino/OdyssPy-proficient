@@ -40,7 +40,7 @@ Coded by Daniele Solombrino @dansolombrino
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "OdyssPy-advanced"
+define build.name = "OdyssPy-proficient"
 
 
 ## Sounds and music ############################################################
