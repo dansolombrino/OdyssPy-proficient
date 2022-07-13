@@ -194,16 +194,16 @@ label lotus_flowers:
 
     show crewmen at right with dissolve
 
+    '''
+        Whenever showing a menu, it is possible to insert almost any desired
+        and needed function code.
+
+        In this example, while showing the user some options, we are showing
+        some narration as well
+    '''
+
     menu:
 
-        '''
-            Whenever showing a menu, it is possible to insert almost any desired
-            and needed function code.
-
-            In this example, while showing the user some options, we are showing
-            some narration as well
-        '''
-        
         crewmen "Hey! Look! We found these! Shall we eat them?"
 
         "Uhm, better safe then sorry, let's find something more familiar...":
@@ -338,14 +338,14 @@ label blinded_polyphemus:
 
     show crewmen at right with dissolve
 
+    '''
+        This is an example of alternative path that students can develop in 
+        the "advanced" version of the interactive story.
+    '''
+
     menu:
 
         "Where to next, chief?"
-
-        '''
-            This is an example of alternative path that students can develop in 
-            the "advanced" version of the interactive story.
-        '''
 
         "Aeolia, land of Aeolus":
 
@@ -498,8 +498,8 @@ label circe:
         The dynamicity is dictated by a state variable, which controls a choice
         made in previous scenes and has influence on the current scene.
 
-        Alternatively, students could've used two different jumps, according to 
-        the value of the "moly" variable, which is checked in the if-else statement.
+        Alternatively, students could\'ve used two different jumps, according to 
+        the value of the \"moly\" variable, which is checked in the if-else statement.
 
         Since the jump statement is widely used, other solutions (like the 
         proposed one) is very appreciated.
