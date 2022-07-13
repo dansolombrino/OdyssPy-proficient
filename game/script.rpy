@@ -83,7 +83,7 @@ label start:
     $ last_scene = "start"
 
     '''
-        scene is a RenPy function wichi allows to control different aspects of 
+        scene is a RenPy function which allows to control different aspects of 
         the scene
 
         In this case, we are setting as background ("bg") an image (ithaca).
@@ -94,7 +94,25 @@ label start:
 
     scene bg ithaca
 
+    '''
+        show is a RenPy function which allows to show an image in the scene.
+
+        "at" allows to specify a position in which to show the image, wilst the 
+        "with" keyword allows to tweak different patameters of the picture
+
+        In this case, the avatar of Homer is shown in the left part of the 
+        screen, with a dissolving entering effect
+    '''
+
     show homer at left with dissolve
+
+    '''
+        This is how one can make a narrator speak.
+
+        Simply name what character (as previously define, at the very beginning 
+        of the code) is talking and the subsequent string is what is going to be
+        shown.
+    '''
 
     homer "A long time ago, in the land of Greece, there lived a man named Odysseus."
 
@@ -107,6 +125,11 @@ label start:
     homer "After the Trojan War ended, Odysseus hops up in his ship, together with his crewmen, in order to go back to Ithaca."
     
     homer "... but his journey back from the war took a little bit longer than expected..."
+
+    '''
+        hide is a RenPy built-in function which allows to hide an image that has
+        been previously shown in the scene
+    '''
 
     hide homer with dissolve
 
@@ -172,6 +195,14 @@ label lotus_flowers:
     show crewmen at right with dissolve
 
     menu:
+
+        '''
+            Whenever showing a menu, it is possible to insert almost any desired
+            and needed function code.
+
+            In this example, while showing the user some options, we are showing
+            some narration as well
+        '''
         
         crewmen "Hey! Look! We found these! Shall we eat them?"
 
@@ -194,6 +225,16 @@ label ate_lotus_flowers:
     play sound "cough_1.mp3"
 
     crewman_1 "GASP! what was there in those flowers?"
+
+    '''
+        play is a built-in RenPy function which can be used to deal with audio 
+        files.
+
+        After the name of the audio to play, it takes some configuration params.
+
+        For example, in this case we are setting the volume to be 30% of the
+        original value, in order to avoid making the experience uncomfortable
+    '''
 
     play sound "cough_2.mp3" volume 0.3
 
@@ -268,8 +309,6 @@ label polyphemus:
 
         "Make Polyphemus drunk and kill him, cutting his head with a giant sharp rock":
 
-            $ intoxicated = True
-
             jump blinded_polyphemus
 
         "Make Polyphemus drunk and blind him, sticking a burning stake into his eye while he's asleep":
@@ -277,8 +316,6 @@ label polyphemus:
             jump blinded_polyphemus
         
         "Take the loss. I'll never be able to counter a giant. I can not win.":
-
-            $ guilty_conscience = True
 
             jump aeolus
     
@@ -304,6 +341,11 @@ label blinded_polyphemus:
     menu:
 
         "Where to next, chief?"
+
+        '''
+            This is an example of alternative path that students can develop in 
+            the "advanced" version of the interactive story.
+        '''
 
         "Aeolia, land of Aeolus":
 
@@ -331,12 +373,20 @@ label aeolus:
         "Aeolus is very friendly with them, and gives them a bag with what?"
 
         "\"Endless bread\", a specially-crafted type of bread which satisfies the need of eating forever":
+            
+            '''
+                This is an example of state variable usage.
+
+                The taken choice is stored in the variable and its value will
+                influence future scenes.
+            '''
 
             $ bag_of_endless_bread = True
 
             jump crewmen_open_bag
 
         "Storm winds, to help them push back to Ithaca":
+
             $ bag_of_winds = True
 
             jump crewmen_open_bag
@@ -375,6 +425,13 @@ label crewmen_open_bag:
     homer "Excited by the prospect of getting back home, the crewmen decide to open the bag gifted to them by Aeolus"
 
     hide homer 
+
+    '''
+        This is an example of state variable usage.
+
+        Decision taken before (stored in the state variable) is now evaluated
+        and is going to affect the subsequent story path.
+    '''
 
     if bag_of_endless_bread == True:
         
@@ -433,6 +490,21 @@ label circe:
     homer "She uses to turn men into pigs, and so it does with Odysseus and his men"
 
     hide homer
+
+    '''
+
+        This is an example of dynamic scene creation.
+
+        The dynamicity is dictated by a state variable, which controls a choice
+        made in previous scenes and has influence on the current scene.
+
+        Alternatively, students could've used two different jumps, according to 
+        the value of the "moly" variable, which is checked in the if-else statement.
+
+        Since the jump statement is widely used, other solutions (like the 
+        proposed one) is very appreciated.
+
+    '''
 
     if moly == True:
 
@@ -504,6 +576,12 @@ label underworld:
 
             jump hypnotic_cat
     
+'''
+    This is an entirely invented scene, just to spice things up a little.
+
+    Students are encouraged to free their creativity whilst realizing actual 
+    scenes AND in the creation of fantasy ones.
+'''
 
 label hypnotic_cat:
 
@@ -579,7 +657,6 @@ label hypnotic_cat:
 label sirens_choice:
 
     $ last_scene = "sirens_choice"
-
 
     scene bg sirens
 
@@ -941,6 +1018,10 @@ label that_s_not_quite_how_it_went:
             jump expression last_scene
 
         "Retry from random scene":
+
+            '''
+                Selecting a random scene to resume the narration from
+            '''
 
             $ import random
             $ random_label_to_jump_to = random.choice(scene_names)
