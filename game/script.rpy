@@ -1,13 +1,13 @@
-﻿'''
-    Defining Odyssey characters.
+﻿
+# Defining Odyssey characters.
 
-    To every character a name and a color is given.
+# To every character a name and a color is given.
 
-    Red-ish colors represent evil characters, whilst blue or green represent
-    good characters.
+# Red-ish colors represent evil characters, whilst blue or green represent
+# good characters.
 
-    Character class is provided by RenPy
-'''
+# Character class is provided by RenPy
+
 define homer = Character("Homer", color="#F8347C")
 define crewmen = Character("Odysseus' crewmen", color="#FFA630")
 define crewman_1 = Character("Crewman 1", color="#B5FD39")
@@ -19,10 +19,10 @@ define scylla_and_charybdis = Character("Scylla and Charybdis", color="#FF0000")
 define helios = Character("Helios", color="#A5B5BF")
 define calypso = Character("Calypso", color="#FF0000")
 
-'''
-    Defining state variables that will be used to deal with multiple, alternative and
-    artificial paths.
-'''
+
+# Defining state variables that will be used to deal with multiple, alternative and
+# artificial paths.
+
 default bag_of_winds = False
 default bag_of_endless_bread = False
 default moly = False
@@ -30,17 +30,17 @@ default teiresias = False
 default sacrificed_all_men = False
 
 
-'''
-    Defining variables for scene selection purposes.
 
-    last_scene stores the last played scene.
-    It is used to store the scene to jump back to, if user commits and error
-    and decides to resume the narration from its last scene
+# Defining variables for scene selection purposes.
 
-    scene_names stores all the possible scenes.
-    It is used to store the scene to jump back to, if user commits and error and decides
-    to resume the narration from its last scene
-'''
+# last_scene stores the last played scene.
+# It is used to store the scene to jump back to, if user commits and error
+# and decides to resume the narration from its last scene
+
+# scene_names stores all the possible scenes.
+# It is used to store the scene to jump back to, if user commits and error and decides
+# to resume the narration from its last scene
+
 
 default last_scene = "start"
 default scene_names = [
@@ -67,52 +67,46 @@ default scene_names = [
     "goodbye"
 ]
 
-'''
-    Game entry point
 
-    This is the very first scene that is presented to the user
-'''
+# Game entry point
+
+# This is the very first scene that is presented to the user
+
 
 label start:
 
-    '''
-        Storing the name of the scene, as described in last_scene in previous 
-        lines of documentation
-    '''
+
+    # Storing the name of the scene, as described in last_scene in previous 
+    # lines of documentation
+
 
     $ last_scene = "start"
 
-    '''
-        scene is a RenPy function which allows to control different aspects of 
-        the scene
+    # scene is a RenPy function which allows to control different aspects of 
+    # the scene
 
-        In this case, we are setting as background ("bg") an image (ithaca).
-        RenPy is pretty smart, in order to specify assets, it is NOT needed to
-        specify their file extension.
-        Image assets must be placed in the \"image\" folder 
-    '''
+    # In this case, we are setting as background ("bg") an image (ithaca).
+    # RenPy is pretty smart, in order to specify assets, it is NOT needed to
+    # specify their file extension.
+    # Image assets must be placed in the \"image\" folder 
 
     scene bg ithaca
 
-    '''
-        show is a RenPy function which allows to show an image in the scene.
+    # show is a RenPy function which allows to show an image in the scene.
 
-        "at" allows to specify a position in which to show the image, wilst the 
-        "with" keyword allows to tweak different patameters of the picture
+    # "at" allows to specify a position in which to show the image, wilst the 
+    # "with" keyword allows to tweak different patameters of the picture
 
-        In this case, the avatar of Homer is shown in the left part of the 
-        screen, with a dissolving entering effect
-    '''
+    # In this case, the avatar of Homer is shown in the left part of the 
+    # screen, with a dissolving entering effect
 
     show homer at left with dissolve
 
-    '''
-        This is how one can make a narrator speak.
+    # This is how one can make a narrator speak.
 
-        Simply name what character (as previously define, at the very beginning 
-        of the code) is talking and the subsequent string is what is going to be
-        shown.
-    '''
+    # Simply name what character (as previously define, at the very beginning 
+    # of the code) is talking and the subsequent string is what is going to be
+    # shown.
 
     homer "A long time ago, in the land of Greece, there lived a man named Odysseus."
 
@@ -126,20 +120,16 @@ label start:
     
     homer "... but his journey back from the war took a little bit longer than expected..."
 
-    '''
-        hide is a RenPy built-in function which allows to hide an image that has
-        been previously shown in the scene
-    '''
+    # hide is a RenPy built-in function which allows to hide an image that has
+    # been previously shown in the scene
 
     hide homer with dissolve
 
-    '''
-        The menu is a built-in function offered by RenPy, which allows the display of a menu with some options
+    # menu is a built-in function offered by RenPy, which allows the display of a menu with some options
 
-        The first string presents the question, whilst the following strings
-        represent the options.
-        Options must end with a \':\' character.
-    '''
+    # The first string presents the question, whilst the following strings
+    # represent the options.
+    # Options must end with a \':\' character.
 
     menu:
 
@@ -147,13 +137,12 @@ label start:
 
         "HECK YEAH!":
             
-            '''
-                Jump is a yet another RenPy built-in function, which allows to 
-                move from a scene to the other.
+            # Jump is a yet another RenPy built-in function, which allows to 
+            # move from a scene to the other.
 
-                The intuition is very very similar to the "goto" statement, 
-                offered by the most common procedural programming languages
-            '''
+            # The intuition is very very similar to the "goto" statement, 
+            # offered by the most common procedural programming languages
+
             jump lotus_flowers
 
         "I'd rather not, I prefer maths...":
@@ -194,13 +183,11 @@ label lotus_flowers:
 
     show crewmen at right with dissolve
 
-    '''
-        Whenever showing a menu, it is possible to insert almost any desired
-        and needed function code.
+    # Whenever showing a menu, it is possible to insert almost any desired
+    # and needed function code.
 
-        In this example, while showing the user some options, we are showing
-        some narration as well
-    '''
+    # In this example, while showing the user some options, we are showing
+    # some narration as well
 
     menu:
 
@@ -226,15 +213,13 @@ label ate_lotus_flowers:
 
     crewman_1 "GASP! what was there in those flowers?"
 
-    '''
-        play is a built-in RenPy function which can be used to deal with audio 
-        files.
+    # play is a built-in RenPy function which can be used to deal with audio 
+    # files.
 
-        After the name of the audio to play, it takes some configuration params.
+    # After the name of the audio to play, it takes some configuration params.
 
-        For example, in this case we are setting the volume to be 30% of the
-        original value, in order to avoid making the experience uncomfortable
-    '''
+    # For example, in this case we are setting the volume to be 30% of the
+    # original value, in order to avoid making the experience uncomfortable
 
     play sound "cough_2.mp3" volume 0.3
 
@@ -338,11 +323,6 @@ label blinded_polyphemus:
 
     show crewmen at right with dissolve
 
-    '''
-        This is an example of alternative path that students can develop in 
-        the "advanced" version of the interactive story.
-    '''
-
     menu:
 
         "Where to next, chief?"
@@ -353,7 +333,7 @@ label blinded_polyphemus:
 
         "Aeaea, home of the goddess, Circe":
 
-            jump circe
+            jump that_s_not_quite_how_it_went
 
 
 label aeolus:
@@ -374,12 +354,10 @@ label aeolus:
 
         "\"Endless bread\", a specially-crafted type of bread which satisfies the need of eating forever":
             
-            '''
-                This is an example of state variable usage.
+            # This is an example of state variable usage.
 
-                The taken choice is stored in the variable and its value will
-                influence future scenes.
-            '''
+            # The taken choice is stored in the variable and its value will
+            # influence future scenes.
 
             $ bag_of_endless_bread = True
 
@@ -426,12 +404,10 @@ label crewmen_open_bag:
 
     hide homer 
 
-    '''
-        This is an example of state variable usage.
+    # This is an example of state variable usage.
 
-        Decision taken before (stored in the state variable) is now evaluated
-        and is going to affect the subsequent story path.
-    '''
+    # Decision taken before (stored in the state variable) is now evaluated
+    # and is going to affect the subsequent story path.
 
     if bag_of_endless_bread == True:
         
@@ -491,20 +467,18 @@ label circe:
 
     hide homer
 
-    '''
 
-        This is an example of dynamic scene creation.
+    # This is an example of dynamic scene creation.
 
-        The dynamicity is dictated by a state variable, which controls a choice
-        made in previous scenes and has influence on the current scene.
+    # The dynamicity is dictated by a state variable, which controls a choice
+    # made in previous scenes and has influence on the current scene.
 
-        Alternatively, students could\'ve used two different jumps, according to 
-        the value of the \"moly\" variable, which is checked in the if-else statement.
+    # Alternatively, students could\'ve used two different jumps, according to 
+    # the value of the \"moly\" variable, which is checked in the if-else statement.
 
-        Since the jump statement is widely used, other solutions (like the 
-        proposed one) is very appreciated.
+    # Since the jump statement is widely used, other solutions (like the 
+    # proposed one) is very appreciated.
 
-    '''
 
     if moly == True:
 
@@ -576,12 +550,10 @@ label underworld:
 
             jump hypnotic_cat
     
-'''
-    This is an entirely invented scene, just to spice things up a little.
+    # This is an entirely invented scene, just to spice things up a little.
 
-    Students are encouraged to free their creativity whilst realizing actual 
-    scenes AND in the creation of fantasy ones.
-'''
+    # Students are encouraged to free their creativity whilst realizing actual 
+    # scenes AND in the creation of fantasy ones.
 
 label hypnotic_cat:
 
@@ -1019,9 +991,7 @@ label that_s_not_quite_how_it_went:
 
         "Retry from random scene":
 
-            '''
-                Selecting a random scene to resume the narration from
-            '''
+            # Selecting a random scene to resume the narration from
 
             $ import random
             $ random_label_to_jump_to = random.choice(scene_names)
