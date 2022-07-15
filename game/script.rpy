@@ -959,7 +959,7 @@ label goodbye_endless_bread:
 
 label goodbye_odysseus_dies_turned_pig:
 
-    $ last_scene = "goodbye_odysseus_dies_turned_pig"
+    $ last_scene = "circe"
     
     scene bg pig
 
