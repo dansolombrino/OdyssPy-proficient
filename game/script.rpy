@@ -338,6 +338,10 @@ label blinded_polyphemus:
 
 label aeolus:
 
+    # resetting state variable in case of landing here via random scene selection
+    $ bag_of_winds = False
+    $ bag_of_endless_bread = False
+
     $ last_scene = "aeolus"
 
     scene bg land of aeolus
@@ -414,10 +418,17 @@ label crewmen_open_bag:
         jump goodbye_endless_bread
     
     if bag_of_winds == True: 
+
+        # state variable is no more necessarily, resetting its value to default
+        # in case of landing in this scene via random scene selector
+        $ bag_of_winds = False
         
         jump circe
 
 label circe:
+    
+    # resetting state variable in case of landing here via random scene selection
+    $ moly = False
 
     $ last_scene = "circe"
     
@@ -528,6 +539,9 @@ label circe:
 
 label underworld:
 
+    # resetting state variable in case of landing here via random scene selection
+    $ teiresias = False
+
     $ last_scene = "underworld"
 
     scene bg underworld
@@ -628,6 +642,9 @@ label hypnotic_cat:
 
 label sirens_choice:
 
+    # resetting state variable in case of landing here via random scene selection
+    $ sacrificed_all_men = False
+
     $ last_scene = "sirens_choice"
 
     scene bg sirens
@@ -685,6 +702,8 @@ label sirens_correct:
         crewmen "YES, SIR!"
 
         hide crewmen
+
+        $ teiresias = False
 
         jump monsters
 
@@ -930,6 +949,10 @@ label goodbye_endless_bread:
 
     homer "But avarice and rivalry eventually killed them all."
 
+    # state variable is no more necessarily, resetting its value to default
+    # in case of landing in its scene via random scene selector 
+    $ bag_of_endless_bread = False
+
     jump that_s_not_quite_how_it_went
 
 
@@ -971,6 +994,7 @@ label already_sacrificed_all_men:
             jump sirens_choice
 
         "Go study maths...":
+
             jump goodbye
 
 label that_s_not_quite_how_it_went:
